@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+ name: my-gateway
+ namespace: default
+spec:
+ # The gateway class name ( envoy, istio, haproxy, nginx, traefik)
+ gatewayClassName: nginx
+ listeners:
+ #The gateway will be listening on port 80.
+ - name: http
+   protocol: HTTP
+   port: 80
+
